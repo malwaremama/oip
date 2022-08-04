@@ -46,7 +46,7 @@ using namespace std;
 const char* validopts[OPTSIZE][4] = {
 	/*short, long, description, required*/
 	{"s", "server", "The hostname or ip address of the server.",NULL},
-	{"p", "port", "The port to connect to. Defaults to 12751.",NULL},
+	{"p", "port", "The port to connect to. Default is 12751.",NULL},
 	{"f", "filter", "The libpcap filter to apply to the stream.",NULL},
 	{"e", "speed", "How fast to read the pcap file. 1000 is normal, 100 is 10x, 10 is 100x, 1 is 1000x",NULL},
 	{"c", "pcap", "Pcap file to read",NULL}

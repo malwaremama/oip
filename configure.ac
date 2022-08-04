@@ -1,11 +1,11 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
-AC_INIT([OIP],[0.06],[rian dot shelley at usu dot edu])
+AC_PREREQ(2.61)
+AC_INIT(OIP, 0.05, rian dot shelley at usu dot edu)
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([kdtree.h])
-AC_CONFIG_HEADERS([config.h])
+AM_CONFIG_HEADER([config.h])
 
 # Checks for programs.
 AC_PROG_CXX
@@ -35,7 +35,7 @@ AC_CHECK_LIB([pcap], [main])
 AC_CHECK_LIB([fontconfig], [FcInit])
 
 #check for freetype
-PKG_CHECK_MODULES([FT2], [freetype2])
+AC_CHECK_FT2()
 
 #ac_oip_LIBS="$LIBS"
 #LIBS="-lcryptopp -lpcap"
@@ -56,7 +56,7 @@ then
 fi
 
 # Checks for header files.
-
+AC_HEADER_STDC
 AC_CHECK_HEADERS([arpa/inet.h netdb.h stdlib.h string.h sys/socket.h sys/time.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
@@ -64,12 +64,13 @@ AC_HEADER_STDBOOL
 AC_C_CONST
 AC_C_INLINE
 AC_TYPE_SIZE_T
+AC_HEADER_TIME
 
 # Checks for library functions.
 AC_FUNC_ERROR_AT_LINE
 AC_FUNC_FORK
 AC_FUNC_SELECT_ARGTYPES
-
+AC_TYPE_SIGNAL
 AC_CHECK_FUNCS([atexit gethostbyaddr gethostbyname gettimeofday memset select socket])
 
 AC_CONFIG_FILES([Makefile])

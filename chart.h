@@ -29,9 +29,9 @@ const struct
 	float value;
 } prefixes[PREFIXCOUNT + 1] = {
 	{"", 0.0},
-	{"K", 1000.0},
-	{"M", 1000000.0},
-	{"G", 1000000000.0},
+	{"K", 10240},
+	{"M", 1048576.0},
+	{"G", 1073741824.0},
 	{"T", 1000000000000.0}
 };
 /*
@@ -73,7 +73,7 @@ public:
 
 	void drawscale();
 
-	void setTickInterval(Uint32 ti) {tickinterval = ti; spti = 1000.0/ti;}
+	void setTickInterval(Uint32 ti) {tickinterval = ti; spti = 1024.0/ti;}
 };
 
 

@@ -27,7 +27,7 @@
 #include "packetsink.h"
 #include "packetpeek.h"
 
-#define DEFAULTMAX 2000
+#define DEFAULTMAX 20000
 
 
 

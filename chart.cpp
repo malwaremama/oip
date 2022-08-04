@@ -129,7 +129,7 @@ void chart::drawscale()
 {
 //*
 	//conver to a per second value
-	float maxrate = maxval * spti;
+	float maxrate = (maxval * spti) * 2.65;
 	int i;
 	for (i = 1; i < PREFIXCOUNT-1; i++)
 		if (maxrate < prefixes[i].value)
